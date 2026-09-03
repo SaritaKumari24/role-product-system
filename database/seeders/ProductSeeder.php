@@ -11,76 +11,113 @@ class ProductSeeder extends Seeder
     /**
      * Run the database seeds.
      */
-     public function run(): void
+    public function run(): void
     {
-        $electronics = Category::where('slug', 'electronics-gadgets')->first();
-        $fashion = Category::where('slug', 'fashion-apparel')->first();
-        $home = Category::where('slug', 'home-living')->first();
-        $fitness = Category::where('slug', 'fitness-outdoor')->first();
-        $books = Category::where('slug', 'books-stationery')->first();
+        $madhubani = Category::where('slug', 'madhubani-paintings')->first();
+        $terracotta = Category::where('slug', 'terracotta-clay-dolls')->first();
+        $sikki = Category::where('slug', 'jute-sikki-grass-crafts')->first();
+        $sujini = Category::where('slug', 'sujini-embroidery-textiles')->first();
+        $wooden = Category::where('slug', 'wooden-bamboo-toys')->first();
+        $brass = Category::where('slug', 'home-decor-brassware')->first();
 
         $products = [
             [
-                'category_id' => $electronics?->id,
-                'name' => 'Pro Sound Active Noise Cancelling Headphones',
-                'slug' => 'pro-sound-anc-headphones',
-                'description' => 'Engineered with studio-grade 40mm drivers, adaptive active noise cancellation, and up to 45 hours of immersive audio playback on a single fast charge.',
-                'price' => 249.99,
-                'image' => 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=700&auto=format&fit=crop&q=80',
+                'category_id' => $madhubani?->id,
+                'name' => 'Traditional Tree of Life Madhubani Painting',
+                'slug' => 'traditional-tree-of-life-painting',
+                'description' => 'Exquisitely hand-painted Mithila artwork illustrating the eternal Tree of Life adorned with peacocks, sacred birds, and auspicious floral motifs using natural dye pigments on handmade paper.',
+                'price' => 1899.00,
+                'image' => 'https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?w=800&auto=format&fit=crop&q=80',
                 'status' => 'active',
             ],
             [
-                'category_id' => $electronics?->id,
-                'name' => 'Ultra-Slim OLED Smartwatch 2',
-                'slug' => 'ultra-slim-oled-smartwatch-2',
-                'description' => 'Featuring all-day ECG & SpO2 biometric tracking, vivid sapphire glass AMOLED display, titanium chassis, and water resistance up to 50 meters.',
-                'price' => 199.50,
-                'image' => 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=700&auto=format&fit=crop&q=80',
+                'category_id' => $madhubani?->id,
+                'name' => 'Kohbar Marriage Blessing Folk Artwork',
+                'slug' => 'kohbar-marriage-blessing-artwork',
+                'description' => 'Ceremonial bridal Kohbar masterpiece capturing symbols of prosperity, fertility, and marital harmony crafted with fine bamboo nibs and mineral colors.',
+                'price' => 2450.00,
+                'image' => 'https://images.unsplash.com/photo-1582561073867-0c17a5ef694c?w=800&auto=format&fit=crop&q=80',
                 'status' => 'active',
             ],
             [
-                'category_id' => $fashion?->id,
-                'name' => 'Minimalist Everyday Leather Backpack',
-                'slug' => 'minimalist-everyday-leather-backpack',
-                'description' => 'Handcrafted from full-grain Italian leather with dedicated 16-inch padded laptop sleeve, waterproof brass zippers, and ergonomic shoulder straps.',
-                'price' => 139.00,
-                'image' => 'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=700&auto=format&fit=crop&q=80',
+                'category_id' => $madhubani?->id,
+                'name' => 'Radha Krishna Divine Love Painting',
+                'slug' => 'radha-krishna-divine-love-painting',
+                'description' => 'Intricately bordered devotional composition portraying Radha and Krishna amidst Kadamba trees in the classical Kachni & Bharni double-line Mithila style.',
+                'price' => 3100.00,
+                'image' => 'https://images.unsplash.com/photo-1577083552431-6e5fd01aa342?w=800&auto=format&fit=crop&q=80',
                 'status' => 'active',
             ],
             [
-                'category_id' => $fashion?->id,
-                'name' => 'Classic Heritage Polarized Sunglasses',
-                'slug' => 'classic-heritage-polarized-sunglasses',
-                'description' => 'Timeless acetate frames equipped with UV400 anti-glare polarized lenses offering crystal-clear optics and lightweight comfort.',
-                'price' => 89.90,
-                'image' => 'https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=700&auto=format&fit=crop&q=80',
+                'category_id' => $terracotta?->id,
+                'name' => 'Handcrafted Terracotta Horse Sculpture',
+                'slug' => 'handcrafted-terracotta-horse',
+                'description' => 'Kiln-fired earthenware folk horse featuring hand-etched saddle bells, tribal medallions, and natural burnished clay texture created by master potters of Bihar.',
+                'price' => 1250.00,
+                'image' => 'https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?w=800&auto=format&fit=crop&q=80',
                 'status' => 'active',
             ],
             [
-                'category_id' => $home?->id,
-                'name' => 'Architectural Modern Ceramic Desk Lamp',
-                'slug' => 'architectural-modern-ceramic-desk-lamp',
-                'description' => 'Warm dimmable LED ambiance light with a matte sand-textured ceramic base and spun-brass touch control dimmer switch.',
-                'price' => 115.00,
-                'image' => 'https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=700&auto=format&fit=crop&q=80',
+                'category_id' => $terracotta?->id,
+                'name' => 'Traditional Clay Bride and Groom Dolls',
+                'slug' => 'traditional-clay-bride-groom-dolls',
+                'description' => 'Pair of ceremonial handcrafted clay figurines attired in traditional festive attire, hand-painted with organic vegetable colors for wedding décor and cultural gifting.',
+                'price' => 980.00,
+                'image' => 'https://images.unsplash.com/photo-1569388330292-79cc1ec67270?w=800&auto=format&fit=crop&q=80',
                 'status' => 'active',
             ],
             [
-                'category_id' => $fitness?->id,
-                'name' => 'Ultra-Grip Eco-Friendly Natural Rubber Yoga Mat',
-                'slug' => 'ultra-grip-eco-yoga-mat',
-                'description' => 'Non-slip polyurethane surface with alignment markers and 5mm high-density natural tree rubber cushioning for joints.',
-                'price' => 68.00,
-                'image' => 'https://images.unsplash.com/photo-1601925260368-ae2f83cf8b7f?w=700&auto=format&fit=crop&q=80',
+                'category_id' => $terracotta?->id,
+                'name' => 'Terracotta Ganesha Wall Hanging Plaque',
+                'slug' => 'terracotta-ganesha-wall-hanging',
+                'description' => 'Auspicious Lord Ganesha terracotta relief wall art relief with detailed modak, crown, and rustic sunburst backdrop for doorways and pooja rooms.',
+                'price' => 750.00,
+                'image' => 'https://images.unsplash.com/photo-1606744888344-4982389d1467?w=800&auto=format&fit=crop&q=80',
                 'status' => 'active',
             ],
             [
-                'category_id' => $books?->id,
-                'name' => 'Artisan Leather Journal & Calligraphy Pen Set',
-                'slug' => 'artisan-leather-journal-pen-set',
-                'description' => '240 pages of 120gsm bleed-proof cotton paper encased in rustic distressed leather with a weighted fountain pen.',
-                'price' => 45.00,
-                'image' => 'https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=700&auto=format&fit=crop&q=80',
+                'category_id' => $sikki?->id,
+                'name' => 'Sikki Grass Handwoven Storage Basket',
+                'slug' => 'sikki-grass-handwoven-basket',
+                'description' => 'Durable and fragrant golden Sikki grass hand-braided basket featuring natural indigo-dyed geometric motifs and snug fitted lid.',
+                'price' => 640.00,
+                'image' => 'https://images.unsplash.com/photo-1590736969955-71cc94801759?w=800&auto=format&fit=crop&q=80',
+                'status' => 'active',
+            ],
+            [
+                'category_id' => $sujini?->id,
+                'name' => 'Traditional Sujini Storytelling Quilt',
+                'slug' => 'traditional-sujini-storytelling-quilt',
+                'description' => 'Authentic GI-protected Sujini embroidered layered cotton throw depicting village folklore, nature flora, and rural celebrations with fine running stitch embroidery.',
+                'price' => 2800.00,
+                'image' => 'https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?w=800&auto=format&fit=crop&q=80',
+                'status' => 'active',
+            ],
+            [
+                'category_id' => $wooden?->id,
+                'name' => 'Hand-Painted Wooden Bird Whistle & Figurine',
+                'slug' => 'hand-painted-wooden-bird-toy',
+                'description' => 'Carved from soft locally sourced wood and finished with non-toxic lac colors. Safe for children and delightful as desktop folk art.',
+                'price' => 450.00,
+                'image' => 'https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?w=800&auto=format&fit=crop&q=80',
+                'status' => 'active',
+            ],
+            [
+                'category_id' => $wooden?->id,
+                'name' => 'Traditional Wooden Toy Cart with Rolling Wheels',
+                'slug' => 'traditional-wooden-toy-cart',
+                'description' => 'Vintage style wooden bullock cart toy crafted by local carpenters using reclaimed teak with smooth edges and natural beeswax polish.',
+                'price' => 690.00,
+                'image' => 'https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?w=800&auto=format&fit=crop&q=80',
+                'status' => 'active',
+            ],
+            [
+                'category_id' => $brass?->id,
+                'name' => 'Polished Brass Elephant Royal Showpiece',
+                'slug' => 'polished-brass-elephant-showpiece',
+                'description' => 'Solid brass elephant statue decorated with ceremonial royal howdah engravings and antique golden patina finish.',
+                'price' => 1650.00,
+                'image' => 'https://images.unsplash.com/photo-1513519245088-0e12902e5a38?w=800&auto=format&fit=crop&q=80',
                 'status' => 'active',
             ],
         ];
@@ -95,4 +132,3 @@ class ProductSeeder extends Seeder
         }
     }
 }
-

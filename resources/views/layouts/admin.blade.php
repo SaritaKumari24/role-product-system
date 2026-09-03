@@ -127,8 +127,22 @@
                     <!-- User & Role Management -->
                     <a href="{{ route('admin.users.index') }}" 
                        class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs font-semibold transition {{ request()->routeIs('admin.users.*') ? 'bg-brand-600 text-white shadow-md shadow-brand-600/30' : 'text-slate-300 hover:text-white hover:bg-white/5' }}">
-                        <i class="fa-solid fa-users-gear text-sm {{ request()->routeIs('admin.users.*') ? 'text-white' : 'text-amber-400' }}"></i>
-                        <span>Users & Role Assignment</span>
+                        <i class="fa-solid fa-users text-sm {{ request()->routeIs('admin.users.*') ? 'text-white' : 'text-amber-400' }}"></i>
+                        <span>User Accounts</span>
+                    </a>
+
+                    <!-- Dynamic Role Management -->
+                    <a href="{{ route('admin.roles.index') }}" 
+                       class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs font-semibold transition {{ request()->routeIs('admin.roles.*') ? 'bg-brand-600 text-white shadow-md shadow-brand-600/30' : 'text-slate-300 hover:text-white hover:bg-white/5' }}">
+                        <i class="fa-solid fa-shield-halved text-sm {{ request()->routeIs('admin.roles.*') ? 'text-white' : 'text-brand-400' }}"></i>
+                        <span>Dynamic Roles</span>
+                    </a>
+
+                    <!-- Dynamic Permission Matrix -->
+                    <a href="{{ route('admin.permissions.index') }}" 
+                       class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs font-semibold transition {{ request()->routeIs('admin.permissions.*') ? 'bg-brand-600 text-white shadow-md shadow-brand-600/30' : 'text-slate-300 hover:text-white hover:bg-white/5' }}">
+                        <i class="fa-solid fa-key text-sm {{ request()->routeIs('admin.permissions.*') ? 'text-white' : 'text-amber-400' }}"></i>
+                        <span>Permissions Matrix</span>
                     </a>
                 @endrole
             </div>

@@ -14,29 +14,34 @@ class CategorySeeder extends Seeder
     {
         $categories = [
             [
-                'name' => 'Electronics & Gadgets',
-                'slug' => 'electronics-gadgets',
-                'description' => 'Cutting-edge smartphones, laptops, smart audio, and accessories.',
+                'name' => 'Madhubani Paintings',
+                'slug' => 'madhubani-paintings',
+                'description' => 'Authentic Mithila & Madhubani hand-painted artworks on handmade paper and canvas using natural pigments.',
             ],
             [
-                'name' => 'Fashion & Apparel',
-                'slug' => 'fashion-apparel',
-                'description' => 'Premium casual wear, formal attire, footwear, and designer accessories.',
+                'name' => 'Terracotta & Clay Dolls',
+                'slug' => 'terracotta-clay-dolls',
+                'description' => 'Earthy terracotta sculptures, decorative figurines, clay bride-groom sets, and traditional pottery.',
             ],
             [
-                'name' => 'Home & Living',
-                'slug' => 'home-living',
-                'description' => 'Modern furniture, ambient lighting, and elegant home decor essentials.',
+                'name' => 'Jute & Sikki Grass Crafts',
+                'slug' => 'jute-sikki-grass-crafts',
+                'description' => 'Eco-friendly golden grass woven baskets, handwoven jute bags, mats, and festive décor.',
             ],
             [
-                'name' => 'Fitness & Outdoor',
-                'slug' => 'fitness-outdoor',
-                'description' => 'High-performance athletic gear, workout equipment, and adventure wear.',
+                'name' => 'Sujini Embroidery Textiles',
+                'slug' => 'sujini-embroidery-textiles',
+                'description' => 'Heritage GI-tagged Sujini hand-embroidered story quilts, dupattas, and artisanal tapestries.',
             ],
             [
-                'name' => 'Books & Stationery',
-                'slug' => 'books-stationery',
-                'description' => 'Best-selling novels, productivity journals, and executive stationery.',
+                'name' => 'Wooden & Bamboo Toys',
+                'slug' => 'wooden-bamboo-toys',
+                'description' => 'Eco-safe handcrafted wooden carts, whistling birds, bamboo puzzles, and vintage nursery toys.',
+            ],
+            [
+                'name' => 'Home Décor & Brassware',
+                'slug' => 'home-decor-brassware',
+                'description' => 'Hand-engraved brass showpieces, ethnic hanging lamps, and artisanal accents for living spaces.',
             ],
         ];
 
@@ -48,4 +53,3 @@ class CategorySeeder extends Seeder
         }
     }
 }
-

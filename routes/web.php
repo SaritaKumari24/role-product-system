@@ -1,7 +1,9 @@
 <?php
 
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\PermissionController;
 use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\Auth\RegisteredUserController;
@@ -41,28 +43,37 @@ Route::middleware('auth')->group(function () {
 
     /*
     |--------------------------------------------------------------------------
-    | Admin & Manager Backend Routes (RBAC Protected)
+    | Admin & Management Backend Routes (Dynamic RBAC Protected)
     |--------------------------------------------------------------------------
     */
-    Route::prefix('admin')->name('admin.')->middleware('role:admin|manager')->group(function () {
+    Route::prefix('admin')->name('admin.')->middleware('role_or_permission:admin|manager|view-admin-panel')->group(function () {
         Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
 
-        // Category Management (Admin & Manager)
+        // Category Management
         Route::resource('categories', CategoryController::class)->except(['show']);
 
-        // Product Management (Admin & Manager: Create, Read, Update)
+        // Product Management
         Route::resource('products', ProductController::class)->except(['show', 'destroy']);
 
-        // Product Deletion (Admin Only)
+        // Product Deletion (Admin or delete-products permission)
         Route::delete('products/{product}', [ProductController::class, 'destroy'])
-            ->middleware('role:admin')
+            ->middleware('role_or_permission:admin|delete-products')
             ->name('products.destroy');
 
-        // User & Role Management (Admin Only)
-        Route::middleware('role:admin')->group(function () {
+        // User, Dynamic Role & Permission Management (Admin Only or manage-users)
+        Route::middleware('role_or_permission:admin|manage-users')->group(function () {
+            // User Management
             Route::get('/users', [UserController::class, 'index'])->name('users.index');
+            Route::get('/users/{user}/edit', [UserController::class, 'edit'])->name('users.edit');
             Route::patch('/users/{user}/role', [UserController::class, 'updateRole'])->name('users.updateRole');
+
+            // Dynamic Role Management
+            Route::resource('roles', RoleController::class)->except(['show']);
+
+            // Dynamic Permission Management
+            Route::get('/permissions', [PermissionController::class, 'index'])->name('permissions.index');
+            Route::post('/permissions', [PermissionController::class, 'store'])->name('permissions.store');
+            Route::delete('/permissions/{permission}', [PermissionController::class, 'destroy'])->name('permissions.destroy');
         });
     });
 });
-

@@ -17,7 +17,7 @@ class RolePermissionSeeder extends Seeder
         // Reset cached roles and permissions
         app()[PermissionRegistrar::class]->forgetCachedPermissions();
 
-        // Define permissions
+        // Define system permissions
         $permissions = [
             'view-admin-panel',
             'view-products',
@@ -26,20 +26,22 @@ class RolePermissionSeeder extends Seeder
             'delete-products',
             'manage-categories',
             'manage-users',
+            'manage-roles',
+            'manage-permissions',
         ];
 
         foreach ($permissions as $permissionName) {
-            Permission::firstOrCreate(['name' => $permissionName]);
+            Permission::firstOrCreate(['name' => $permissionName, 'guard_name' => 'web']);
         }
 
         // Customer Role
-        $customerRole = Role::firstOrCreate(['name' => 'customer']);
+        $customerRole = Role::firstOrCreate(['name' => 'customer', 'guard_name' => 'web']);
         $customerRole->syncPermissions([
             'view-products',
         ]);
 
         // Manager Role
-        $managerRole = Role::firstOrCreate(['name' => 'manager']);
+        $managerRole = Role::firstOrCreate(['name' => 'manager', 'guard_name' => 'web']);
         $managerRole->syncPermissions([
             'view-admin-panel',
             'view-products',
@@ -49,8 +51,7 @@ class RolePermissionSeeder extends Seeder
         ]);
 
         // Admin Role
-        $adminRole = Role::firstOrCreate(['name' => 'admin']);
+        $adminRole = Role::firstOrCreate(['name' => 'admin', 'guard_name' => 'web']);
         $adminRole->syncPermissions(Permission::all());
     }
 }
-
