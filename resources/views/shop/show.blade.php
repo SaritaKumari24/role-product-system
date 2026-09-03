@@ -100,7 +100,7 @@
                 <!-- Interactive Purchase / WhatsApp Inquiry Area -->
                 <div class="pt-6 border-t border-[#F2ECE0] space-y-3">
                     <div class="flex flex-col sm:flex-row gap-3">
-                        <a href="https://api.whatsapp.com/send/?phone=919570479650&text=Hello+LittlePicassos!+I+am+interested+in+ordering+{{ urlencode($product->name) }}" target="_blank" 
+                        <a href="https://api.whatsapp.com/send/?phone=919570479650&text=Hello+KalaKriti!+I+am+interested+in+ordering+{{ urlencode($product->name) }}" target="_blank" 
                            class="flex-1 py-3.5 rounded-2xl bg-gradient-to-r from-emerald-600 to-emerald-700 hover:from-emerald-500 hover:to-emerald-600 text-white font-bold text-xs shadow-lg shadow-emerald-600/20 transition flex items-center justify-center gap-2">
                             <i class="fa-brands fa-whatsapp text-sm"></i>
                             <span>Inquire & Order on WhatsApp</span>

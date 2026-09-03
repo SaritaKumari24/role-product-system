@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>@yield('title', 'Handcraft & Art Marketplace') - LittlePicassos</title>
+    <title>@yield('title', 'Handcraft & Art Marketplace') - KalaKriti</title>
     <meta name="description" content="Discover authentic handcrafted products, home décor, personalized gifts, festive collections, and unique artisan creations from Katihar, Bihar.">
 
     <!-- Google Fonts: Plus Jakarta Sans + Playfair Display for Artisanal Elegance -->
@@ -95,12 +95,12 @@
                 <span class="hidden sm:inline">Handcrafted with love from Katihar, Bihar &bull; Worldwide Delivery</span>
             </div>
             <div class="flex items-center gap-4 text-[11px] text-[#C9BFB5]">
-                <a href="https://api.whatsapp.com/send/?phone=919570479650&text=Hello+LittlePicassos" target="_blank" class="hover:text-white transition flex items-center gap-1">
-                    <i class="fa-brands fa-whatsapp text-emerald-400"></i> +91 95704 79650
+                <a href="https://api.whatsapp.com/send/?phone=919570479650&text=Hello+KalaKriti" target="_blank" class="hover:text-white transition flex items-center gap-1">
+                    <i class="fa-brands fa-whatsapp text-emerald-400"></i> +91 919191991
                 </a>
                 <span class="hidden md:inline text-slate-600">|</span>
-                <a href="mailto:little.picassos01@gmail.com" class="hidden md:flex items-center gap-1 hover:text-white transition">
-                    <i class="fa-regular fa-envelope text-amber-300"></i> little.picassos01@gmail.com
+                <a href="mailto:info@kalakriti.in" class="hidden md:flex items-center gap-1 hover:text-white transition">
+                    <i class="fa-regular fa-envelope text-amber-300"></i> info@kalakriti.in
                 </a>
             </div>
         </div>
@@ -110,14 +110,14 @@
     <header class="artisan-header sticky top-0 z-50 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-20 items-center gap-4">
-                <!-- Brand Logo (LittlePicassos style) -->
+                <!-- Brand Logo (KalaKriti) -->
                 <a href="{{ route('home') }}" class="flex items-center gap-3 group">
                     <div class="w-11 h-11 rounded-2xl bg-gradient-to-br from-terracotta-500 to-amber-600 flex items-center justify-center text-white font-black text-xl shadow-md shadow-terracotta-500/30 group-hover:scale-105 transition duration-200">
                         <i class="fa-solid fa-palette"></i>
                     </div>
                     <div>
                         <span class="text-2xl font-black tracking-tight text-[#2B231D] font-serif">
-                            Little<span class="text-terracotta-500">Picassos</span>
+                            Kala<span class="text-terracotta-500">Kriti</span>
                         </span>
                         <span class="block text-[10px] font-bold tracking-widest text-[#7C5731] uppercase -mt-1">
                             Handcraft & Art Marketplace
@@ -293,19 +293,19 @@
                         <div class="w-10 h-10 rounded-2xl bg-gradient-to-br from-terracotta-500 to-amber-600 flex items-center justify-center text-white font-black text-lg">
                             <i class="fa-solid fa-palette"></i>
                         </div>
-                        <span class="text-2xl font-black text-white font-serif">Little<span class="text-terracotta-400">Picassos</span></span>
+                        <span class="text-2xl font-black text-white font-serif">Kala<span class="text-terracotta-400">Kriti</span></span>
                     </div>
                     <p class="text-xs leading-relaxed text-[#A89D91] max-w-sm">
-                        LittlePicassos is a dedicated handcraft & art marketplace bridging master heritage artisans from Katihar and Mithila directly with art lovers worldwide.
+                        KalaKriti is a dedicated handcraft & art marketplace bridging master heritage artisans from Katihar and Mithila directly with art lovers worldwide.
                     </p>
                     <div class="pt-2 flex items-center gap-3 text-sm">
-                        <a href="https://www.instagram.com/little.picassos01" target="_blank" class="w-9 h-9 rounded-xl bg-[#2E241E] hover:bg-terracotta-600 text-white flex items-center justify-center transition">
+                        <a href="https://www.instagram.com" target="_blank" class="w-9 h-9 rounded-xl bg-[#2E241E] hover:bg-terracotta-600 text-white flex items-center justify-center transition">
                             <i class="fa-brands fa-instagram"></i>
                         </a>
                         <a href="https://api.whatsapp.com/send/?phone=919570479650" target="_blank" class="w-9 h-9 rounded-xl bg-[#2E241E] hover:bg-emerald-600 text-white flex items-center justify-center transition">
                             <i class="fa-brands fa-whatsapp"></i>
                         </a>
-                        <a href="mailto:little.picassos01@gmail.com" class="w-9 h-9 rounded-xl bg-[#2E241E] hover:bg-amber-600 text-white flex items-center justify-center transition">
+                        <a href="mailto:info@kalakriti.in" class="w-9 h-9 rounded-xl bg-[#2E241E] hover:bg-amber-600 text-white flex items-center justify-center transition">
                             <i class="fa-regular fa-envelope"></i>
                         </a>
                     </div>
@@ -348,7 +348,7 @@
                     </p>
                     <p class="text-[#A89D91]">
                         <i class="fa-regular fa-envelope text-amber-400 mr-1.5"></i>
-                        little.picassos01@gmail.com
+                        info@kalakriti.in
                     </p>
                 </div>
             </div>
@@ -356,7 +356,7 @@
 
         <!-- Copyright Bottom -->
         <div class="border-t border-[#362C24] py-6 text-center text-xs text-[#8A7F73]">
-            <p>Copyright LittlePicassos &copy; {{ date('Y') }}. All Rights Reserved &bull; Authentic Handcraft & Art Marketplace in Katihar, Bihar</p>
+            <p>Copyright KalaKriti &copy; {{ date('Y') }}. All Rights Reserved &bull; Authentic Handcraft & Art Marketplace in Katihar, Bihar</p>
         </div>
     </footer>
 

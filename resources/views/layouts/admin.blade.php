@@ -79,9 +79,9 @@
                 </div>
                 <div>
                     <span class="text-lg font-black tracking-tight bg-gradient-to-r from-white via-slate-100 to-slate-400 bg-clip-text text-transparent">
-                        Apex<span class="text-brand-400">Control</span>
+                        Kala<span class="text-amber-400">Kriti</span>
                     </span>
-                    <span class="block text-[9px] font-bold tracking-widest text-brand-400 uppercase -mt-0.5">
+                    <span class="block text-[9px] font-bold tracking-widest text-amber-400 uppercase -mt-0.5">
                         {{ auth()->user()->hasRole('admin') ? 'Admin Panel' : 'Manager Panel' }}
                     </span>
                 </div>
