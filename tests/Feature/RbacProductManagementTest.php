@@ -90,6 +90,59 @@ class RbacProductManagementTest extends TestCase
         $response->assertSee('High performance tablet');
     }
 
+    public function test_customer_cannot_add_products_forbidden_403(): void
+    {
+        $response = $this->actingAs($this->customer)->post(route('admin.products.store'), [
+            'name' => 'Unauthorized Product',
+            'category_id' => $this->category->id,
+            'price' => 99.00,
+            'description' => 'Should fail',
+            'status' => 'active',
+        ]);
+
+        $response->assertStatus(403);
+        $this->assertDatabaseMissing('products', ['name' => 'Unauthorized Product']);
+    }
+
+    public function test_customer_cannot_edit_products_forbidden_403(): void
+    {
+        $product = Product::create([
+            'category_id' => $this->category->id,
+            'name' => 'Existing Product',
+            'slug' => 'existing-product',
+            'price' => 50.00,
+            'status' => 'active',
+        ]);
+
+        $response = $this->actingAs($this->customer)->put(route('admin.products.update', $product), [
+            'name' => 'Hacked Product Name',
+            'category_id' => $this->category->id,
+            'price' => 10.00,
+            'status' => 'active',
+        ]);
+
+        $response->assertStatus(403);
+        $this->assertDatabaseHas('products', [
+            'id' => $product->id,
+            'name' => 'Existing Product',
+        ]);
+    }
+
+    public function test_customer_cannot_delete_products_forbidden_403(): void
+    {
+        $product = Product::create([
+            'category_id' => $this->category->id,
+            'name' => 'Undeletable Product',
+            'slug' => 'undeletable-product',
+            'price' => 75.00,
+            'status' => 'active',
+        ]);
+
+        $response = $this->actingAs($this->customer)->delete(route('admin.products.destroy', $product));
+        $response->assertStatus(403);
+        $this->assertDatabaseHas('products', ['id' => $product->id]);
+    }
+
     /*
     |--------------------------------------------------------------------------
     | Manager RBAC Capabilities & Restrictions Tests

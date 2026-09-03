@@ -26,25 +26,19 @@ class RegisteredUserController extends Controller
      */
     public function store(RegisterRequest $request): RedirectResponse
     {
-        $role = $request->input('role', 'customer');
-
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
         ]);
 
-        $user->assignRole($role);
+        // Public registrations are always assigned the Customer role
+        $user->assignRole('customer');
 
         event(new Registered($user));
 
         Auth::login($user);
 
-        if ($user->hasRole(['admin', 'manager'])) {
-            return redirect()->route('admin.dashboard')->with('success', 'Account created successfully! Welcome to your dashboard.');
-        }
-
-        return redirect()->route('shop.index')->with('success', 'Account registered successfully! Welcome to our store.');
+        return redirect()->route('shop.index')->with('success', 'Account registered successfully! Welcome to KalaKriti.');
     }
 }
-
